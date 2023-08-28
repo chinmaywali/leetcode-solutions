@@ -15,10 +15,34 @@ my solution :
 
   1 } we can do it either by checking elements at each index , but the time complexity increase 
   
-  2 } so we go with second approach i.e using binary search , making use that the matrix is already sorted..
+  2 } so we go with second approach i.e using search technique , making use that the matrix is already sorted..
 
 
-code in c:
+#leetcode74:
+
+bool searchMatrix(int** matrix, int matrixSize, int* matrixColSize, int target){
+    int rows = matrixSize;
+    int cols = *matrixColSize;
+
+    int row = 0;
+    int col = cols - 1;
+
+    while (row < rows && col >= 0) {
+        if (matrix[row][col] == target) {
+            return true;
+        } else if (matrix[row][col] > target) {
+            col--;
+        } else {
+            row++;
+        }
+    }
+    
+    return false;
+}
+
+                                                    OR
+
+complete code in c:
 
 #include <stdio.h>
 
