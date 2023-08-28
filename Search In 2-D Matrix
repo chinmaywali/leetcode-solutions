@@ -1,0 +1,62 @@
+                                                                  leetcode-74(Medium)
+                                                                Search In 2-D Matrix
+
+question:
+
+You are given an m x n integer matrix matrix with the following two properties:
+  1.Each row is sorted in non-decreasing order.
+  2.The first integer of each row is greater than the last integer of the previous row.
+
+Given an integer target, return true if target is in matrix or false otherwise.
+You must write a solution in O(log(m * n)) time complexity.
+
+
+my solution : 
+
+  1 } we can do it either by checking elements at each index , but the time complexity increase 
+  
+  2 } so we go with second approach i.e using binary search , making use that the matrix is already sorted..
+
+
+code in c:
+
+#include <stdio.h>
+
+int searchEle(int arr[3][4],int t,int rows,int cols);
+
+int main()
+{
+    
+    int arr[3][4] = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+    int t = 13; 
+    int rows = 3;
+    int cols = 4;
+    int result = searchEle(arr,t,rows,cols);
+    if(result){
+        printf("yes");
+    }    
+    else {
+        printf("noo");
+    }   
+    return 0;
+}
+
+int searchEle(int arr[][4],int t,int rows,int cols)  // 1 2 3 -- 4 5 6 -- 7 8 9
+{
+    int row = 0;
+    int col = cols-1;  //i.e (0,3)  ... 1  2  [3]
+    
+    while(row < rows && col >= 0){
+        if(arr[row][col] == t){     
+            return 1;
+        }
+        else if(arr[row][col] > t){
+          col--;  
+        }
+        else {
+            row++;
+        }
+    }
+    return 0;
+}
+
