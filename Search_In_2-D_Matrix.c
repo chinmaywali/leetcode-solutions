@@ -1,6 +1,35 @@
 
  code in c :
+
+ #leetcode74:
  
+  bool searchMatrix(int** matrix, int matrixSize, int* matrixColSize, int target){
+    int rows = matrixSize;
+    int cols = *matrixColSize;
+
+    int row = 0;
+    int col = cols - 1;
+
+    while (row < rows && col >= 0) {
+        if (matrix[row][col] == target) {
+            return true;
+        } else if (matrix[row][col] > target) {
+            col--;
+        } else {
+            row++;
+        }
+    }
+    
+    return false;
+}
+
+
+                                       ..............or............
+
+                                        
+
+//complete code :
+                                                          
 #include <stdio.h>
 
 int searchEle(int arr[3][4],int t,int rows,int cols);
