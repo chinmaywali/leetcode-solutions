@@ -1,0 +1,43 @@
+                                                                            leetcode(153): medium  
+                                                                    Find Minimum in Rotated Sorted Array
+
+
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
+
+[4,5,6,7,0,1,2] if it was rotated 4 times.
+[0,1,2,4,5,6,7] if it was rotated 7 times.
+
+now find out smallest element from that array
+
+
+sample ex: 
+Input: nums = [3,4,5,1,2]
+Output: 1
+Explanation: The original array was [1,2,3,4,5] rotated 3 times. 
+
+solution : 
+            using Binary Search...
+
+                for above example   [4   ,   5,   6,   7,   0,   1,   2]
+
+                          2 pointers : 
+                                         1)  Left at  index 0 i.e 4
+                                         2)  right at  index len(array)-1  i.e  2
+
+                        while ( left < right ) 
+                         mid = ( l+ r ) / 2;  .i.e here mid = 7
+
+                        if arr[mid] > arr[r]
+                                        shift left pointer to mid+1        .i.e here  7 > 2  therfore we shift left to mid+1 i.e now l is at 0
+                                                                                              now new l = 0 , r = 2
+
+                        else   shift right to mid 
+
+                after completing all the iterations return arr[left]....
+
+
+done ..... 
+
+
+
+
