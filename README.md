@@ -1,4 +1,6 @@
 # leetcode-solutions
 
-## These Solutions are wriiten by me
-### some of these maynot be optimal , but you can use it as a reference ...
+## These Solutions for the leetcode questions 
+### some of these maynot be optimal , but you can understand the logic and implement it in required languages..
+
+
