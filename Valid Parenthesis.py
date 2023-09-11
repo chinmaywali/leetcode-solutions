@@ -32,3 +32,32 @@ class Solution(object): '''
                     return False
 
         return not stack
+
+
+#-----------------------------or-------------------
+#complete code 
+
+def valid(s):
+    stack = []
+    
+    
+    for i in s:
+        if i == '(' or i == '[' or i == '{':
+            stack.append(i)
+            
+        elif i == ')' or i == ']' or  i == '}':
+            if not stack:
+                return False
+            ob = stack.pop()
+            if (i==')' and ob!='(') or (i==']' and ob!='[') or (i=='}' and ob!='{'):
+                return False
+                
+    return not stack
+
+
+s = input()
+if valid(s):
+    print("yes")
+else:
+    print("no")
+
